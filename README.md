@@ -1,2 +1,2 @@
 # PocketCasterApp
-An Electron-powered app for PocketCastss
+An Electron-powered app for PocketCasts
