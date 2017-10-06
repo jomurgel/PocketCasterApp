@@ -1,0 +1,21 @@
+{
+  "name": "pocketcaster-app",
+  "version": "0.0.1",
+  "description": "PocketCaster App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/jomurgel/PocketCasterApp",
+  "keywords": [
+    "Electron",
+    "pocketcast",
+    "podcast",
+    "media"
+  ],
+  "author": "jomurgel",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  }
+}
