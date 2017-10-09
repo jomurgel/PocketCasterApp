@@ -20,7 +20,7 @@ function createWindow() {
 		height: 620
 	})
 
-	mainWindow.loadURL( url )
+	mainWindow.loadURL(file://${__dirname}/index.html)
 
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
