@@ -16,15 +16,21 @@ let mainWindow
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		width: 960,
-		height: 620
+		width: 1080,
+		height: 720
 	})
-
-	mainWindow.loadURL(file://${__dirname}/index.html)
-
+	
+	var useBeta = false;
+	
+	if(useBeta){
+		mainWindow.loadURL('file://' + __dirname + '/beta.html')
+	} 	else {
+		mainWindow.loadURL('file://' + __dirname + '/index.html')
+	}
+	
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
-
+	
 	// Emitted when the window is closed.
 	mainWindow.on( 'closed', function () {
 		// Dereference the window object, usually you would store windows
