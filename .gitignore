@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+/pocketcasterapp.sublime-workspace
+/pocketcasterapp.sublime-project
