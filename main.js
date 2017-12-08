@@ -2,7 +2,7 @@ const electron = require( 'electron' )
 const path = require( 'path' )
 const nativeImage = electron.nativeImage
 
-let appIcon = nativeImage.createFromPath( path.join(__dirname, 'assets/icons/png/256x256.png' ))
+let appIcon = nativeImage.createFromPath( path.join( __dirname, 'assets/icons/png/256x256.png' ) )
 
 // Module to control application life.
 const app = electron.app
