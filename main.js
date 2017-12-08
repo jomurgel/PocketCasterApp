@@ -9,6 +9,9 @@ const Menu = electron.Menu;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+// Setup global shortcut.
+const globalShortcut = electron.globalShortcut;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
