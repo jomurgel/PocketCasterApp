@@ -27,6 +27,46 @@ function createWindow() {
 		width: 1080,
 		height: 720
 	});
+
+	// Create global media key shortcuts.
+	let registerKeys = function () {
+
+		const reg = globalShortcut.register('MediaPlayPause', () => {
+			 // console.log('mediaplaypause pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "\u0020"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "\u0020"
+			});
+		});
+
+		const regNext = globalShortcut.register('MediaNextTrack', () => {
+			// console.log('medianexttrack pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "right"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "right"
+			});
+		});
+
+		const regPrevious = globalShortcut.register('MediaPreviousTrack', () => {
+			// console.log('medianexttrack pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "left"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "left"
+			});
+		});
+	};
 	
 	// Populate menu items for the window
 	const menuTemplate = [
@@ -77,6 +117,10 @@ function createWindow() {
 		// when you should delete the corresponding element.
 		mainWindow = null;
 	})
+
+	// Register mediakeys.
+	registerKeys();
+
 }
 
 // This method will be called when Electron has finished
