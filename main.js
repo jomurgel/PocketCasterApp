@@ -1,4 +1,8 @@
 const electron = require( 'electron' )
+const path = require( 'path' )
+const nativeImage = electron.nativeImage
+
+let appIcon = nativeImage.createFromPath( path.join(__dirname, 'assets/icons/png/256x256.png' ))
 
 // Module to control application life.
 const app = electron.app
@@ -28,7 +32,8 @@ function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
 		width: 1080,
-		height: 720
+		height: 720,
+		icon: appIcon
 	});
 
 	// Create global media key shortcuts.
