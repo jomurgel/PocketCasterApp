@@ -3,6 +3,9 @@
 // All of the Node.js APIs are available in this process.
 
 document.addEventListener("keyup", function(e){
+
+	// console.log(e.keyCode);
+
 	var webview = document.getElementById('pcast');
 	if(e.keyCode == 179){
 		webview.send('media_play_pause');

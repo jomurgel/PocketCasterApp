@@ -1,4 +1,8 @@
 const electron = require( 'electron' )
+const path = require( 'path' )
+const nativeImage = electron.nativeImage
+
+let appIcon = nativeImage.createFromPath( path.join( __dirname, 'assets/icons/png/256x256.png' ) )
 
 // Module to control application life.
 const app = electron.app
@@ -8,6 +12,9 @@ const Menu = electron.Menu;
 
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+// Setup global shortcut.
+const globalShortcut = electron.globalShortcut;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,8 +32,49 @@ function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
 		width: 1080,
-		height: 720
+		height: 720,
+		icon: appIcon
 	});
+
+	// Create global media key shortcuts.
+	let registerKeys = function () {
+
+		const reg = globalShortcut.register('MediaPlayPause', () => {
+			 // console.log('mediaplaypause pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "\u0020"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "\u0020"
+			});
+		});
+
+		const regNext = globalShortcut.register('MediaNextTrack', () => {
+			// console.log('medianexttrack pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "right"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "right"
+			});
+		});
+
+		const regPrevious = globalShortcut.register('MediaPreviousTrack', () => {
+			// console.log('medianexttrack pressed');
+			mainWindow.webContents.sendInputEvent({
+				type: "keyDown",
+				keyCode: "left"
+			});
+			mainWindow.webContents.sendInputEvent({
+				type: "keyUp",
+				keyCode: "left"
+			});
+		});
+	};
 	
 	// Populate menu items for the window
 	const menuTemplate = [
@@ -37,17 +85,19 @@ function createWindow() {
 				label: 'Open DevTools',
 				click: () => {
 					mainWindow.webContents.openDevTools();
-				}
+				},
+				accelerator: 'CmdOrCtrl+Alt+I'
 			}, {
 				label: 'Quit',
 				click: () => {
 					app.quit();
-				}
+				},
+				accelerator: 'CmdOrCtrl+Q'
 			}
 			]
 		},
 		{
-			label: 'PocketCasts',
+			label: 'Version',
 			submenu: [
 			{
 				label: 'Stable',
@@ -77,6 +127,10 @@ function createWindow() {
 		// when you should delete the corresponding element.
 		mainWindow = null;
 	})
+
+	// Register mediakeys.
+	registerKeys();
+
 }
 
 // This method will be called when Electron has finished
