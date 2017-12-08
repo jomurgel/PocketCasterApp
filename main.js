@@ -85,17 +85,19 @@ function createWindow() {
 				label: 'Open DevTools',
 				click: () => {
 					mainWindow.webContents.openDevTools();
-				}
+				},
+				accelerator: 'CmdOrCtrl+Alt+I'
 			}, {
 				label: 'Quit',
 				click: () => {
 					app.quit();
-				}
+				},
+				accelerator: 'CmdOrCtrl+Q'
 			}
 			]
 		},
 		{
-			label: 'PocketCasts',
+			label: 'Version',
 			submenu: [
 			{
 				label: 'Stable',
