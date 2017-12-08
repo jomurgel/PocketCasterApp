@@ -10,6 +10,7 @@ ipcRenderer.on('media_play_pause', function(){
         document.getElementsByClassName('animated-play-button')[0].click();
     }
 });
+
 ipcRenderer.on('media_next',function(event,data){
     var btn = document.getElementsByClassName('skip_forward_button')
     if(btn.length > 0){
@@ -18,6 +19,7 @@ ipcRenderer.on('media_next',function(event,data){
         document.getElementsByClassName('skip-forward-button')[0].click();
     }
 });
+
 ipcRenderer.on('media_prev',function(event,data){
     var btn = document.getElementsByClassName('skip_back_button')
     if(btn.length > 0){
