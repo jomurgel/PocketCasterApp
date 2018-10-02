@@ -4,7 +4,59 @@
   "description": "PocketCaster App",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "linux": "electron-builder -l",
+    "mac": "electron-builder -m",
+    "win": "electron-builder -w"
+  },
+  "build": {
+    "appId": "PocketCaster",
+    "appImage": {
+      "systemIntegration": "ask",
+      "license": "LICENSE.md"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.entertainment",
+      "icon": "assets/icons/mac/icon.icns",
+      "type": "development"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "devel"
+    },
+    "deb": {
+      "packageCategory": "Audio"
+    },
+    "linux": {
+      "category": "Audio",
+      "maintainer": "Karl Lensson",
+      "vendor": "",
+      "executableName": "pocketcaster",
+      "synopsis": "An Electron-powered app for PocketCasts",
+      "description": "Tabs are so last year.",
+      "icon": "assets/icons/png/256x256.png",
+      "desktop": {
+        "Name": "PocketCaster",
+        "Exec": "pocketcaster",
+        "Icon": "256x256.png",
+        "Type": "Application",
+        "Categories": "Audio"
+      },
+      "target": [
+        "AppImage"
+      ]
+    }
   },
   "repository": "https://github.com/jomurgel/PocketCasterApp",
   "keywords": [
@@ -13,9 +65,13 @@
     "podcast",
     "media"
   ],
-  "author": "jomurgel",
+  "author": {
+    "email": "hello@jomurgel.com",
+    "name": "jomurgel"
+  },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.7.8"
+    "electron": "^1.7.8",
+    "electron-builder": "^20.26.1"
   }
 }
