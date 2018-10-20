@@ -1,10 +1,12 @@
 {
-  "name": "pocketcaster-app",
+  "name": "pocketcaster",
   "version": "0.0.1",
   "description": "PocketCaster App",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/jomurgel/PocketCasterApp",
   "keywords": [
@@ -16,6 +18,19 @@
   "author": "jomurgel",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.5"
+    "electron": "^3.0.5",
+    "electron-builder": "^20.28.4"
+  },
+  "dependencies": {
+  },
+  "build": {
+    "linux": {
+      "executableName": "PocketCaster",
+      "maintainer": "trivett@gmail.com",
+      "icon": "./assets/icons/png/256x256.png",
+      "description": "Unofficial Electron app for PocketCasts",
+      "category": "Audio",
+      "target": ["deb"]
+    }
   }
 }
