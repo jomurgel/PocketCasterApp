@@ -33,9 +33,9 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - Switch from Stable to Beta via the Version menu.
 
 ## Roadmap
-- [ ] Linux support. (ongoing)
 - [ ] Fix icon issue on Linux. (Looks like a persistent bug for [electron-build](https://github.com/electron-userland/electron-builder/issues/3404))
 - [ ] Support media keys on Linux.
+- [ ] Create dist packages for Mac and Windows.
 - [ ] Touchbar support.
 - [ ] Notifications.
 
