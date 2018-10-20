@@ -17,6 +17,15 @@ npm install
 npm start
 ```
 
+## Generating AppImage and .deb packages for Debian based Linux distros:
+
+```bash
+npm run dist
+```
+This will generate a `./dist` directory. You can open the deb or AppImage to install the program to your Applications folder. 
+
+
+
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 ## Features
@@ -24,9 +33,13 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - Switch from Stable to Beta via the Version menu.
 
 ## Roadmap
-- [ ] Linux support.
+- [ ] Linux support. (ongoing)
+- [ ] Fix icon issue on Linux. (Looks like a persistent bug for [electron-build](https://github.com/electron-userland/electron-builder/issues/3404))
+- [ ] Support media keys on Linux.
 - [ ] Touchbar support.
 - [ ] Notifications.
 
 ## License
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+
