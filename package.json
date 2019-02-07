@@ -71,7 +71,7 @@
   },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.8",
-    "electron-builder": "^20.26.1"
+    "electron": "^3.0.5",
+    "electron-builder": "^20.28.4"
   }
 }
