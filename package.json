@@ -73,5 +73,25 @@
   "devDependencies": {
     "electron": "^3.0.5",
     "electron-builder": "^20.28.4"
+  },
+  "dependencies": {},
+  "build": {
+    "linux": {
+      "executableName": "PocketCaster",
+      "maintainer": "trivett@gmail.com",
+      "icon": "assets/icons/png/256x256.png",
+      "description": "Unofficial Electron app for PocketCasts",
+      "category": "Audio",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "desktop": {
+        "Name": "PocketCaster",
+        "Icon": "assets/icons/png/256x256.png",
+        "Comment": "Unofficial Electron app for PocketCasts",
+        "Categories": "Audio"
+      }
+    }
   }
 }
