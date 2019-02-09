@@ -28,5 +28,11 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 - [ ] Touchbar support.
 - [ ] Notifications.
 
+## Contributors
+- [jomurgel](https://github.com/jomurgel)
+- [spettinichi](https://github.com/spettinichi)
+- [0x715C](https://github.com/0x715C)
+- [https://github.com/trivett](trivett)
+
 ## License
 [CC0 1.0 (Public Domain)](LICENSE.md)
