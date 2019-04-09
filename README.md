@@ -13,6 +13,8 @@ git clone https://github.com/jomurgel/PocketCasterApp.git
 cd PocketCasterApp
 # Install dependencies
 npm install
+# Update dependencies
+npm update
 # Run the app
 npm start
 ```
